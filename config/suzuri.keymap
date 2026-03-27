@@ -5,7 +5,7 @@
 #include <input/processors.dtsi>  
 #include <dt-bindings/zmk/input_transform.h>  
 
-// レイヤーの定義
+// レイヤー定義
 #define DEFAULT 0
 #define LAYER1  1
 #define LAYER2  2
