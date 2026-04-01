@@ -41,7 +41,7 @@
         device = <&trackball>;
         input-processors = 
             <&zip_x_scaler 9 8>,
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>; // ←左右＋上下反転
+            <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>; // ←左右反転
 
         scroller {
             layers = <1>;
