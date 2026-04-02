@@ -19,7 +19,7 @@
                 &mkp MB5 // 進む（Forward）
                 &mkp MB4 // 戻る（Back）
                 &kp ZENKAKU_HANKAKU //1つのキーで英日を切り替えたい
-                &tog LAYER1 //レイヤー1へ
+                &tog 1 //レイヤー1へ
             >;
         };
 
@@ -28,7 +28,7 @@
                 &mkp MB5 // 進む（Forward）
                 &mkp MB4 // 戻る（Back）
                 &kp LGUI // 左Windowsキー
-                &tog LAYER2 //レイヤー2へ
+                &tog 2 //レイヤー2へ
             >;
         };
 
@@ -37,7 +37,7 @@
                 &mkp MB5 // 進む（Forward）
                 &mkp MB4 // 戻る（Back）
                 &kp LC(LA(DEL)) //CTL+ALT+DEL
-                &tog LAYER0 //レイヤー0へ
+                &tog 0 //レイヤー0へ
             >;
         };
     };
