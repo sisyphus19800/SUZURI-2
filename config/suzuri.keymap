@@ -18,7 +18,7 @@
             bindings = <
                 &mkp MB5 // 進む（Forward）
                 &mkp MB4 // 戻る（Back）
-                &kp LC(LALT DEL) //1つのキーで英日を切り替えたい
+                &kp LC(SPACE) //1つのキーで英日を切り替えたい
                 &tog 1 //レイヤー1へ
             >;
         };
@@ -36,7 +36,7 @@
             bindings = <
                 &mkp MB5 // 進む（Forward）
                 &mkp MB4 // 戻る（Back）
-                &kp LC(LALT DEL) //CTL+ALT+DEL
+                &ctrl_alt_del //CTL+ALT+DEL
                 &tog 0 //レイヤー0へ
             >;
         };
