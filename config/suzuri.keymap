@@ -16,28 +16,28 @@
 
         default_layer {
             bindings = <
-                &mkp MB5 // 進む（Forward）   
-　　　　　　　　　&mkp MB4　// 戻る（Back）
-                &kp ZENKAKU_HANKAKU   //1つのキーで英⇄日を切り替えたい
-　　　　　　　　　&tog LAYER0  &tog LAYER1
+                &mkp MB5 // 進む（Forward）
+                &mkp MB4 // 戻る（Back）
+                &kp ZENKAKU_HANKAKU //1つのキーで英日を切り替えたい
+                &tog LAYER1 //レイヤー1へ
             >;
         };
 
         layer_1 {
             bindings = <
-                &mkp MB5  
-　　　　　　　　　&mkp MB4
-                &kp LGUI   // 左Windowsキー  
-　　　　　　　　　&tog LAYER1  &tog LAYER2
+                &mkp MB5 // 進む（Forward）
+                &mkp MB4 // 戻る（Back）
+                &kp LGUI // 左Windowsキー
+                &tog LAYER2 //レイヤー2へ
             >;
         };
 
         layer_2 {
             bindings = <
-                &mkp MB5  
-　　　　　　　　　&mkp MB4
-                &kp LC(LA(DEL))  
-　　　　　　　　　&tog LAYER2  &tog LAYER0
+                &mkp MB5 // 進む（Forward）
+                &mkp MB4 // 戻る（Back）
+                &kp LC(LA(DEL)) //CTL+ALT+DEL
+                &tog LAYER0 //レイヤー0へ
             >;
         };
     };
