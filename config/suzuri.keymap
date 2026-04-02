@@ -17,21 +17,21 @@
         default_layer {
             bindings = <
                 &mkp LCLK    &mkp RCLK
-                &mo LAYER1   &mo LAYER2
+                &kp ZENKAKU_HANKAKU   &tog LAYER1  &tog LAYER2
             >;
         };
 
         layer_1 {
             bindings = <
                 &mkp MB4     &mkp MB5
-                &trans       &mkp MCLK
+                &trans       &tog LAYER1  &tog LAYER2
             >;
         };
 
         layer_2 {
             bindings = <
                 &kp LC(C)    &kp LC(V)
-                &kp LC(X)    &trans
+                &kp LC(X)    &tog LAYER1  &tog LAYER2
             >;
         };
     };
