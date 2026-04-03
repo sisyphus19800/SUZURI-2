@@ -17,19 +17,7 @@
             label = "CTRL_ALT_DEL";
             #binding-cells = <0>;
             bindings = <
-                &kp LCTRL
-                &kp LALT
-                &kp DEL
-            >;
-        };
-
-        lang_switch: lang_switch {
-            compatible = "zmk,behavior-macro";
-            label = "LANG_SWITCH";
-            #binding-cells = <0>;
-            bindings = <
-                &kp LCTRL
-                &kp GRAVE
+                &kp C_A_DEL   // ← ちゃんと同時押しに修正
             >;
         };
     };
@@ -41,7 +29,7 @@
             bindings = <
                 &mkp MB5
                 &mkp MB4
-                &lang_switch
+                &kp A_GRAVE   // ← IMEトグル（完成形）
                 &to 1
             >;
         };
