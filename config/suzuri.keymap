@@ -11,80 +11,74 @@
 #define LAYER2  2
 
 / {
-behaviors {
-ctrl_alt_del: ctrl_alt_del {
-compatible = "zmk,behavior-macro";
-label = "CTRL_ALT_DEL";
-#binding-cells = <0>;
-bindings = <
-&kp LCTRL
-&kp LALT
-&kp DEL
->;
-};
-};
+    behaviors {
+        ctrl_alt_del: ctrl_alt_del {
+            compatible = "zmk,behavior-macro";
+            label = "CTRL_ALT_DEL";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LCTRL
+                &kp LALT
+                &kp DEL
+            >;
+        };
 
-behaviors {
-    lang_switch: lang_switch {
-        compatible = "zmk,behavior-macro";
-        label = "LANG_SWITCH";
-        #binding-cells = <0>;
-        bindings = <
-            &kp LCTRL
-            &kp GRAVE
-        >;
-    };
-};
-
-
-```
-keymap {
-    compatible = "zmk,keymap";
-
-    default_layer {
-        bindings = <
-            &mkp MB5 // 進む（Forward）
-            &mkp MB4 // 戻る（Back）
-            &ime_toggle　// 1つのキーで英日を切り替えたい
-            &tog 1 // レイヤー1へ
-        >;
+        lang_switch: lang_switch {
+            compatible = "zmk,behavior-macro";
+            label = "LANG_SWITCH";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LCTRL
+                &kp GRAVE
+            >;
+        };
     };
 
-    layer_1 {
-        bindings = <
-            &mkp MB5 // 進む（Forward）
-            &mkp MB4 // 戻る（Back）
-            &kp LGUI // 左Windowsキー
-            &tog 2 // レイヤー2へ
-        >;
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &mkp MB5
+                &mkp MB4
+                &lang_switch
+                &to 1
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+                &mkp MB5
+                &mkp MB4
+                &kp LGUI
+                &to 2
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+                &mkp MB5
+                &mkp MB4
+                &ctrl_alt_del
+                &to 0
+            >;
+        };
     };
 
-    layer_2 {
-        bindings = <
-            &mkp MB5 // 進む（Forward）
-            &mkp MB4 // 戻る（Back）
-            &ctrl_alt_del // CTL+ALT+DEL
-            &tog 0 // レイヤー0へ
-        >;
-    };
-};
-
-trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-    input-processors =
-        <&zip_x_scaler 9 8>,
-        <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>; // ←左右反転
-
-    scroller {
-        layers = <1>;
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
         input-processors =
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, // スクロールも反転
-            <&zip_scroll_scaler 1 40>;
-        process-next;
-    };
-};
-```
+            <&zip_x_scaler 9 8>,
+            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>;
 
+        scroller {
+            layers = <1>;
+            input-processors =
+                <&zip_xy_to_scroll_mapper>,
+                <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+                <&zip_scroll_scaler 1 40>;
+            process-next;
+        };
+    };
 };
