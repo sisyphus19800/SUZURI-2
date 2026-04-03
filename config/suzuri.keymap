@@ -24,6 +24,19 @@ bindings = <
 };
 };
 
+behaviors {
+    lang_switch: lang_switch {
+        compatible = "zmk,behavior-macro";
+        label = "LANG_SWITCH";
+        #binding-cells = <0>;
+        bindings = <
+            &kp LCTRL
+            &kp SPACE
+        >;
+    };
+};
+
+
 ```
 keymap {
     compatible = "zmk,keymap";
@@ -32,7 +45,7 @@ keymap {
         bindings = <
             &mkp MB5 // 進む（Forward）
             &mkp MB4 // 戻る（Back）
-            &kp LC(SPACE) // 1つのキーで英日を切り替えたい
+            &lang_switch// 1つのキーで英日を切り替えたい
             &tog 1 // レイヤー1へ
         >;
     };
