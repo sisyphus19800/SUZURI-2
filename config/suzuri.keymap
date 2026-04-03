@@ -27,7 +27,7 @@
             bindings = <
                 &mkp MB5
                 &mkp MB4
-                &kp LALT(GRAVE)   // IMEトグル（Alt + `）
+                &kp LA(GRAVE)   // IMEトグル（Alt + `）
                 &to 1         // レイヤー１へ
             >;
         };
