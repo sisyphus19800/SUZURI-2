@@ -16,9 +16,7 @@
             compatible = "zmk,behavior-macro";
             label = "CTRL_ALT_DEL";
             #binding-cells = <0>;
-            bindings = <
-                &kp C_A_DEL   // ← ちゃんと同時押しに修正
-            >;
+            bindings = < &kp C_A_DEL >;
         };
     };
 
@@ -29,8 +27,8 @@
             bindings = <
                 &mkp MB5
                 &mkp MB4
-                &kp A_GRAVE   // ← IMEトグル（完成形）
-                &to 1
+                &kp A_GRAVE   // IMEトグル（Alt + `）
+                &to 1         // 半角スペースに修正
             >;
         };
 
