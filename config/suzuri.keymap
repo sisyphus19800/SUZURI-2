@@ -1,4 +1,4 @@
-#include <behaviors.dtsi>
+#include <behaviors.dtsi> 
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
@@ -9,6 +9,19 @@
 #define LAYER2  2
 
 / {
+    // --- 追加: Ctrl+Space マクロ ---
+    macros {
+        ctrl_space: ctrl_space {
+            compatible = "zmk,behavior-macro";
+            label = "CTRL_SPACE";
+            bindings = <
+                &macro_press &kp LCTRL
+                &macro_tap   &kp SPACE
+                &macro_release &kp LCTRL
+            >;
+        };
+    };
+
     keymap {
         // キーマップの定義
         // 参考 https://zmk.dev/docs/keymaps
@@ -16,7 +29,7 @@
 
         default_layer {
             bindings = <
-                &mkp LCLK    &mkp RCLK
+                &ctrl_space  &mkp RCLK
                 &mo LAYER1   &mo LAYER2
             >;
         };
