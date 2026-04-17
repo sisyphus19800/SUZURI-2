@@ -11,13 +11,13 @@
 / {
     // --- 追加: Ctrl+Space マクロ ---
     macros {
-        ctrl_space: ctrl_space {
-            compatible = "zmk,behavior-macro";
-            label = "CTRL_SPACE";
-            bindings = <
-                &macro_press &kp LCTRL
-                &macro_tap   &kp SPACE
-                &macro_release &kp LCTRL
+    ctrl_space: ctrl_space {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &macro_press &kp LCTRL
+            &macro_tap   &kp SPACE
+            &macro_release &kp LCTRL
             >;
         };
     };
