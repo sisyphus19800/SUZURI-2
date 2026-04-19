@@ -29,8 +29,8 @@
 
         default_layer {
             bindings = <
-                &ctrl_space  &mkp RCLK
-                &mo LAYER1   &mo LAYER2
+                &ctrl_space  &mo LAYER1
+                &kp MB4   &kp MB5
             >;
         };
 
